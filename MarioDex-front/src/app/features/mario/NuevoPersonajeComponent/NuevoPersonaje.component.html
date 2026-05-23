@@ -1,0 +1,24 @@
+<div class="form-container">
+  <h2>Nuevo personaje</h2>
+
+  <form (ngSubmit)="enviar()" class="form-card">
+
+    <label>Nombre</label>
+    <input [(ngModel)]="nombre" name="nombre" required placeholder="Ej: Mario">
+
+    <label>Tipo</label>
+    <input [(ngModel)]="tipo" name="tipo" required placeholder="Ej: Héroe">
+
+    <label>Poder</label>
+    <input [(ngModel)]="poder" name="poder" type="number" required placeholder="Ej: 95">
+
+    <label>Mundo</label>
+    <input [(ngModel)]="mundo" name="mundo" required placeholder="Ej: Reino Champiñón">
+
+    <div class="buttons">
+      <button type="submit" class="btn-guardar">Guardar</button>
+      <button type="button" class="btn-cancelar" (click)="cancelar.emit()">Cancelar</button>
+    </div>
+
+  </form>
+</div>

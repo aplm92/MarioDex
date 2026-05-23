@@ -1,0 +1,27 @@
+<div class="page-container">
+
+  <h1 class="titulo">MarioDex</h1>
+  <h2 class="subtitulo">Lista de personajes guardados en la base de datos</h2>
+
+  <ul class="lista-personajes">
+    <li *ngFor="let p of personajes$ | async" class="item-personaje">
+      <strong>{{ p.nombre }}</strong>
+      <span> | Tipo: {{ p.tipo }}</span>
+      <span> | Poder: {{ p.poder }}</span>
+      <span> | Mundo: {{ p.mundo }}</span>
+    </li>
+  </ul>
+
+  <button class="btn-add" (click)="abrirModal()">➕ Añadir personaje</button>
+
+  <!-- MODAL MANUAL -->
+  <div *ngIf="mostrarModal" class="modal">
+    <div class="modal-content">
+      <app-nuevo-personaje
+        (crear)="onNuevoPersonaje($event)"
+        (cancelar)="cerrarModal()">
+      </app-nuevo-personaje>
+    </div>
+  </div>
+
+</div>
