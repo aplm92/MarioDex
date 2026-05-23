@@ -7,7 +7,7 @@ if [ ! -f /var/www/html/storage/app_key_set ]; then
 fi
 
 # Ejecutar migraciones automáticamente
-php artisan migrate --force
+php artisan migrate --force || true
 
-# Iniciar Laravel
-php artisan serve --host=0.0.0.0 --port=80
+# Iniciar Apache (NO usar php artisan serve)
+apache2-foreground
